@@ -10,4 +10,7 @@ int main() {
     std::cout << "Protons: " << p << '\n';
     std::cout << "Neutrons: " << n << '\n';
     std::cout << "Electrons: " << e << '\n';
+
+    std::cout << "\nMass Number: " << p + n << '\n';
+    std::cout << "Net Charge: " << p - e << '\n';
 }
