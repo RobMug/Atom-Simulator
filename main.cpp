@@ -1,5 +1,6 @@
 #include <iostream>     // std::cout, std::cin
 #include "Element.h"    // Element
+#include "Atom.h"       // Atom
 
 int main () {
     int p, n, e;
@@ -12,19 +13,21 @@ int main () {
         return 1;
     }
 
-    std::cout << "Protons: " << p << '\n';
-    std::cout << "Neutrons: " << n << '\n';
-    std::cout << "Electrons: " << e << '\n';
+    Atom atom(p, n, e);
 
-    std::cout << "\nMass Number: " << p + n << '\n';
-    std::cout << "Net Charge: " << p - e << '\n';
+    std::cout << "Protons: " << atom.getProtons() << '\n';
+    std::cout << "Neutrons: " << atom.getNeutrons() << '\n';
+    std::cout << "Electrons: " << atom.getElectrons() << '\n';
 
-    // p works because we already filtered out
+    std::cout << "\nMass Number: " << atom.getMassNumber() << '\n';
+    std::cout << "Net Charge: " << atom.getNetCharge() << '\n';
+
+    // atom.getProtons() works because we already filtered out
     // anything negative or that is equal to 0
-    if (p <= elementSize) {
-        std::cout << "Element: " << elements[p-1].name << '\n';
-        std::cout << "Symbol: " << elements[p-1].symbol << '\n';
-        std::cout << "Atomic Number: " << elements[p-1].atomicNumber << '\n';
+    if (atom.getProtons() <= elementSize) {
+        std::cout << "\nElement: " << elements[atom.getProtons()-1].name << '\n';
+        std::cout << "Symbol: " << elements[atom.getProtons()-1].symbol << '\n';
+        std::cout << "Atomic Number: " << elements[atom.getProtons()-1].atomicNumber << '\n';
     }
     else {
         std::cout << "Element: Not currently supported" << '\n';
