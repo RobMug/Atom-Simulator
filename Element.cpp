@@ -1,7 +1,7 @@
 #include "Element.h"    // Element
 #include <iterator>     // std::size()
 
-// Elements, Symbol, AtomicNumber
+// Name, Symbol, Atomic Number
 Element elements[] = {
     {"Hydrogen", "H", 1},
     {"Helium", "He", 2},

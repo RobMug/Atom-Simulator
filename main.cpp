@@ -3,7 +3,7 @@
 
 int main () {
     int p, n, e;
-    
+
     std::cout << "Enter the number of Protons, Neutrons, and Electrons below:" << std::endl;
     std::cin >> p >> n >> e;
 
@@ -19,6 +19,8 @@ int main () {
     std::cout << "\nMass Number: " << p + n << '\n';
     std::cout << "Net Charge: " << p - e << '\n';
 
+    // p works because we already filtered out
+    // anything negative or that is equal to 0
     if (p <= elementSize) {
         std::cout << "Element: " << elements[p-1].name << '\n';
         std::cout << "Symbol: " << elements[p-1].symbol << '\n';
